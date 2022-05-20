@@ -5,76 +5,73 @@
   (onHide)="closeDialog(form)"
 >
   <form #form="ngForm" (ngSubmit)="addCustomer(form)">
-    <br/>
-    <label for="name">Name</label><br/>
+    <br />
+    <label for="name">Name</label><br />
     <input
       id="name"
       name="name"
       class="p-inputtext-sm"
       disabled="{{ readOnly }}"
-      placeholder="{{ customerData?.name}}"
+      placeholder="{{ customerData?.name }}"
       required
       type="text"
       pInputText
       ngModel
       #name="ngModel"
     />
-    <div *ngIf="name.invalid && (name.dirty || name.touched)"
-         class="alert">
-      <div *ngIf="name.errors?.['required']">
-        Name is required.
-      </div>
+    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+      <div *ngIf="name.errors?.['required']">Name is required.</div>
     </div>
-    <br/>
-    <label for="surname">Surname</label><br/>
+    <br />
+    <label for="surname">Surname</label><br />
     <input
       id="surname"
       name="surname"
       class="p-inputtext-sm"
       disabled="{{ readOnly }}"
-      placeholder="{{ customerData?.surname}}"
+      placeholder="{{ customerData?.surname }}"
       required
       type="text"
       pInputText
       ngModel
       #surname="ngModel"
     />
-    <div *ngIf="surname.invalid && (surname.dirty || surname.touched)"
-         class="alert">
-      <div *ngIf="surname.errors?.['required']">
-        Surname is required.
-      </div>
+    <div
+      *ngIf="surname.invalid && (surname.dirty || surname.touched)"
+      class="alert"
+    >
+      <div *ngIf="surname.errors?.['required']">Surname is required.</div>
     </div>
-    <br/>
-    <label for="birthdate">Birth date</label><br/>
+    <br />
+    <label for="birthdate">Birth date</label><br />
     <input
       id="birthdate"
       name="birthdate"
       class="p-inputtext-sm"
       disabled="{{ readOnly }}"
-      placeholder="{{ customerData?.birthdate}}"
+      placeholder="{{ customerData?.birthdate }}"
       required
-      type='date'
+      type="date"
       [max]="maxDate"
       onkeydown="return false"
       pInputText
       ngModel
       #birthdate="ngModel"
     />
-    <div *ngIf="birthdate.invalid && (birthdate.dirty || birthdate.touched)"
-         class="alert">
-      <div *ngIf="birthdate.errors?.['required']">
-        Birthdate is required.
-      </div>
+    <div
+      *ngIf="birthdate.invalid && (birthdate.dirty || birthdate.touched)"
+      class="alert"
+    >
+      <div *ngIf="birthdate.errors?.['required']">Birthdate is required.</div>
     </div>
-    <br/>
-    <label for="phoneNumber">Telephone number</label><br/>
+    <br />
+    <label for="phoneNumber">Telephone number</label><br />
     <input
       id="phoneNumber"
       name="phoneNumber"
       class="p-inputtext-sm"
       disabled="{{ readOnly }}"
-      placeholder="{{ customerData?.phoneNumber}}"
+      placeholder="{{ customerData?.phoneNumber }}"
       required
       type="text"
       pInputText
@@ -82,8 +79,10 @@
       #phoneNumber="ngModel"
       [pattern]="phoneNumberPattern"
     />
-    <div *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)"
-         class="alert">
+    <div
+      *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)"
+      class="alert"
+    >
       <div *ngIf="phoneNumber.errors?.['required']">
         Telephone number is required.
       </div>
@@ -91,14 +90,14 @@
         Telephone number should be entered in valid format
       </div>
     </div>
-    <br/>
-    <label for="email">Email</label><br/>
+    <br />
+    <label for="email">Email</label><br />
     <input
       id="email"
       name="email"
       class="p-inputtext-sm"
       disabled="{{ readOnly }}"
-      placeholder="{{ customerData?.phoneNumber}}"
+      placeholder="{{ customerData?.phoneNumber }}"
       required
       type="text"
       pInputText
@@ -106,21 +105,18 @@
       #email="ngModel"
       [pattern]="emailPattern"
     />
-    <div *ngIf="email.invalid && (email.dirty || email.touched)"
-         class="alert">
-      <div *ngIf="email.errors?.['required']">
-        Email is required.
-      </div>
+    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert">
+      <div *ngIf="email.errors?.['required']">Email is required.</div>
       <div *ngIf="email.errors?.['pattern']">
         Email should be presented in valid format
       </div>
     </div>
-    <br/>
+    <br />
 
     <button
       pButton
       type="submit"
-      style="display:{{showFormButton}}"
+      style="display:{{ showFormButton }}"
       [disabled]="form.form.invalid"
       (click)="closeDialog(form)"
     >

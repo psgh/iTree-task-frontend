@@ -1,10 +1,8 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[appEmailValidation]'
+  selector: '[appEmailValidation]',
 })
 export class EmailValidationDirective {
-
-  constructor() { }
-
+  constructor() {}
 }

@@ -1,10 +1,21 @@
-<p-table dataKey="id" [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
-         responsiveLayout="scroll"
-         currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-         [rowsPerPageOptions]="[10,25,50]"
-         #dt
-         [value]="customers"
-         [globalFilterFields]="['id','name', 'surname','birthdate','phoneNumber','email']"
+<p-table
+  dataKey="id"
+  [paginator]="true"
+  [rows]="10"
+  [showCurrentPageReport]="true"
+  responsiveLayout="scroll"
+  currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+  [rowsPerPageOptions]="[10, 25, 50]"
+  #dt
+  [value]="customers"
+  [globalFilterFields]="[
+    'id',
+    'name',
+    'surname',
+    'birthdate',
+    'phoneNumber',
+    'email'
+  ]"
 >
   <ng-template pTemplate="caption">
     <div class="caption">
@@ -14,7 +25,12 @@
         (input)="dt.filterGlobal($any($event.target).value, 'contains')"
         placeholder="Search keyword"
       />
-      <button pButton type="submit" id="addCustomerButton" (click)="openAddDialog()">
+      <button
+        pButton
+        type="submit"
+        id="addCustomerButton"
+        (click)="openAddDialog()"
+      >
         Add customer
       </button>
     </div>
@@ -47,7 +63,7 @@
       <td>{{ customer.name }}</td>
       <td>{{ customer.surname }}</td>
       <td>{{ customer.birthdate }}</td>
-      <td>{{ customer.phoneNumber}}</td>
+      <td>{{ customer.phoneNumber }}</td>
       <td>{{ customer.email }}</td>
     </tr>
   </ng-template>

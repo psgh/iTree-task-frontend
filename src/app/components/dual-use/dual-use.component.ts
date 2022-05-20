@@ -1,15 +1,14 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {NgForm} from '@angular/forms';
-import {Customer} from "../../model/Customer";
-import {DatePipe} from "@angular/common";
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Customer } from '../../model/Customer';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-dual-use',
   templateUrl: './dual-use.component.html',
-  styleUrls: ['./dual-use.component.css']
+  styleUrls: ['./dual-use.component.css'],
 })
 export class DualUseComponent implements OnInit {
-
   phoneNumberPattern = /^\+?\d+$/;
   emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
@@ -33,8 +32,7 @@ export class DualUseComponent implements OnInit {
     );
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   private refresh() {
     this.refreshRequest.emit();

@@ -8,9 +8,8 @@ describe('DualUseComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DualUseComponent ]
-    })
-    .compileComponents();
+      declarations: [DualUseComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

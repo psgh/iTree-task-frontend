@@ -1,16 +1,15 @@
-import {Component, OnInit} from '@angular/core';
-import {Customer} from "../../model/Customer";
-import {CustomerService} from "../../services/customer.service";
-import {NgForm} from "@angular/forms";
-import {HttpErrorResponse} from "@angular/common/http";
+import { Component, OnInit } from '@angular/core';
+import { Customer } from '../../model/Customer';
+import { CustomerService } from '../../services/customer.service';
+import { NgForm } from '@angular/forms';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.css']
+  styleUrls: ['./table.component.css'],
 })
 export class TableComponent implements OnInit {
-
   customers!: Customer[];
   selectedCustomer!: Customer;
   placeholderCustomer = {} as Customer;
@@ -31,7 +30,8 @@ export class TableComponent implements OnInit {
     this.placeholderCustomer.surname = 'Enter surname';
     this.placeholderCustomer.birthdate = 'Enter birthdate in format YYYY-MM-DD';
     this.placeholderCustomer.phoneNumber = 'Enter phone number';
-    this.placeholderCustomer.email = 'Enter email in format you@emailprovider.com';
+    this.placeholderCustomer.email =
+      'Enter email in format you@emailprovider.com';
   }
 
   ngOnInit(): void {
@@ -42,8 +42,7 @@ export class TableComponent implements OnInit {
 
   addUser(form: NgForm): void {
     this.customerService.addCustomer(form.value).subscribe(
-      (response: Customer) => {
-      },
+      (response: Customer) => {},
       (error: HttpErrorResponse) => {
         console.error(error.message);
       }
